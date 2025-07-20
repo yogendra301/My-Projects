@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  display: block;
+  position: relative;
+  min-height: calc(100vh - 140px); /* Adjust based on header/footer height */
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Fix for sections not showing */
+::ng-deep {
+  .section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

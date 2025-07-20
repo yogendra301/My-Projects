@@ -1,0 +1,59 @@
+<header class="animated-header">
+  <mat-toolbar class="header-toolbar">
+    <div class="container">
+      <div class="row w-100 align-items-center">
+        <div class="col-md-3 d-flex align-items-center">
+          <a routerLink="/" class="logo-container">
+            <div class="avatar-container">
+              <div class="avatar-placeholder">
+                <!-- <mat-icon>person</mat-icon> -->
+              </div>
+              <span class="logo-text ms-2">Yogendra's World</span>
+            </div>
+          </a>
+        </div>
+        
+        <div class="col-md-9">
+          <div class="d-none d-md-flex justify-content-end">
+            <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+              <span class="nav-text">Home</span>
+            </a>
+            <a mat-button routerLink="/personal" routerLinkActive="active-link" class="nav-link">
+              <span class="nav-text">Personal</span>
+            </a>
+            <a mat-button routerLink="/professional" routerLinkActive="active-link" class="nav-link">
+              <span class="nav-text">Professional</span>
+            </a>
+            <a mat-button routerLink="/hobbies" routerLinkActive="active-link" class="nav-link">
+              <span class="nav-text">Hobbies</span>
+            </a>
+          </div>
+          
+          <div class="d-flex d-md-none justify-content-end">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <a mat-menu-item routerLink="/">
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+              </a>
+              <a mat-menu-item routerLink="/personal">
+                <mat-icon>person</mat-icon>
+                <span>Personal</span>
+              </a>
+              <a mat-menu-item routerLink="/professional">
+                <mat-icon>work</mat-icon>
+                <span>Professional</span>
+              </a>
+              <a mat-menu-item routerLink="/hobbies">
+                <mat-icon>favorite</mat-icon>
+                <span>Hobbies</span>
+              </a>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+</header>

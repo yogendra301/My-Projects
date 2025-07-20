@@ -1,0 +1,286 @@
+<!-- Hero Section -->
+<section class="hero-section hobbies-hero">
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-12 text-center">
+        <h1 class="page-title" data-aos="fade-up">
+          <span class="gradient-text">My Hobbies & Interests</span>
+        </h1>
+        <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
+          Explore my passions beyond coding - music, movies, and entertainment that inspire me
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Music Section -->
+<section class="section music-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Music</h2>
+    <p class="section-description text-center" data-aos="fade-up" data-aos-delay="100">
+      Music is my escape and inspiration - these are the genres and artists that move me.
+    </p>
+    
+    <div class="music-categories mt-5">
+      <mat-tab-group mat-align-tabs="center" animationDuration="500ms" backgroundColor="primary">
+        <!-- Indian Music -->
+        <mat-tab label="Indian Music">
+          <div class="tab-content" data-aos="fade-up">
+            <div class="row mt-4">
+              <div class="col-md-6 mb-4" *ngFor="let genre of musicCategories.indian.genres; let i = index"
+                   [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="200 + (i * 100)">
+                <div class="music-card">
+                  <div class="music-image">
+                    <div class="image-placeholder">
+                      <mat-icon>music_note</mat-icon>
+                    </div>
+                  </div>
+                  <div class="music-content">
+                    <h4 class="music-genre">{{ genre.name }}</h4>
+                    <div class="artists-list">
+                      <span class="artist-chip" *ngFor="let artist of genre.artists">{{ artist }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        
+        <!-- Old Classics -->
+        <mat-tab label="Old Classics">
+          <div class="tab-content" data-aos="fade-up">
+            <div class="row mt-4">
+              <div class="col-md-6 mb-4" *ngFor="let genre of musicCategories.oldClassics.genres; let i = index"
+                   [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="200 + (i * 100)">
+                <div class="music-card">
+                  <div class="music-image">
+                    <div class="image-placeholder">
+                      <mat-icon>music_note</mat-icon>
+                    </div>
+                  </div>
+                  <div class="music-content">
+                    <h4 class="music-genre">{{ genre.name }}</h4>
+                    <div class="artists-list">
+                      <span class="artist-chip" *ngFor="let artist of genre.artists">{{ artist }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        
+        <!-- English Music -->
+        <mat-tab label="English Music">
+          <div class="tab-content" data-aos="fade-up">
+            <div class="row mt-4">
+              <div class="col-md-4 mb-4" *ngFor="let genre of musicCategories.english.genres; let i = index"
+                   [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="200 + (i * 100)">
+                <div class="music-card">
+                  <div class="music-image">
+                    <div class="image-placeholder">
+                      <mat-icon>music_note</mat-icon>
+                    </div>
+                  </div>
+                  <div class="music-content">
+                    <h4 class="music-genre">{{ genre.name }}</h4>
+                    <div class="artists-list">
+                      <span class="artist-chip" *ngFor="let artist of genre.artists">{{ artist }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</section>
+
+<!-- Movies & Web Series Section -->
+<section class="section entertainment-section">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Movies & Web Series</h2>
+    <p class="section-description text-center" data-aos="fade-up" data-aos-delay="100">
+      Stories that captivate me across different genres and cultures.
+    </p>
+    
+    <div class="entertainment-categories mt-5">
+      <mat-tab-group mat-align-tabs="center" animationDuration="500ms" backgroundColor="primary">
+        <!-- Movies Tab -->
+        <mat-tab label="Movies">
+          <div class="tab-content" data-aos="fade-up">
+            <div class="entertainment-subcategories">
+              <h3 class="subcategory-title">Indian Movies</h3>
+              
+              <mat-tab-group mat-align-tabs="start" animationDuration="300ms">
+                <mat-tab label="Hindi">
+                  <div class="row mt-4">
+                    <div class="col-md-4 mb-4" *ngFor="let movie of entertainment.movies.categories.indian.subcategories.hindi.items; let i = index"
+                         [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="100 + (i * 50)">
+                      <div class="movie-card">
+                        <div class="movie-image">
+                          <div class="image-placeholder">
+                            <mat-icon>movie</mat-icon>
+                          </div>
+                        </div>
+                        <div class="movie-content">
+                          <h5 class="movie-title">{{ movie.title }}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+                
+                <mat-tab label="South Indian">
+                  <div class="row mt-4">
+                    <div class="col-md-4 mb-4" *ngFor="let movie of entertainment.movies.categories.indian.subcategories.southIndian.items; let i = index"
+                         [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="100 + (i * 50)">
+                      <div class="movie-card">
+                        <div class="movie-image">
+                          <div class="image-placeholder">
+                            <mat-icon>movie</mat-icon>
+                          </div>
+                        </div>
+                        <div class="movie-content">
+                          <h5 class="movie-title">{{ movie.title }}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+              
+              <h3 class="subcategory-title mt-5">Foreign Movies</h3>
+              
+              <mat-tab-group mat-align-tabs="start" animationDuration="300ms">
+                <mat-tab label="Action">
+                  <div class="row mt-4">
+                    <div class="col-md-4 mb-4" *ngFor="let movie of entertainment.movies.categories.foreign.subcategories.action.items; let i = index"
+                         [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="100 + (i * 50)">
+                      <div class="movie-card">
+                        <div class="movie-image">
+                          <div class="image-placeholder">
+                            <mat-icon>movie</mat-icon>
+                          </div>
+                        </div>
+                        <div class="movie-content">
+                          <h5 class="movie-title">{{ movie.title }}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+                
+                <mat-tab label="Comic Book">
+                  <div class="row mt-4">
+                    <div class="col-md-4 mb-4" *ngFor="let movie of entertainment.movies.categories.foreign.subcategories.comicBook.items; let i = index"
+                         [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="100 + (i * 50)">
+                      <div class="movie-card">
+                        <div class="movie-image">
+                          <div class="image-placeholder">
+                            <mat-icon>movie</mat-icon>
+                          </div>
+                        </div>
+                        <div class="movie-content">
+                          <h5 class="movie-title">{{ movie.title }}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+                
+                <mat-tab label="Science Fiction">
+                  <div class="row mt-4">
+                    <div class="col-md-4 mb-4" *ngFor="let movie of entertainment.movies.categories.foreign.subcategories.scienceFiction.items; let i = index"
+                         [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="100 + (i * 50)">
+                      <div class="movie-card">
+                        <div class="movie-image">
+                          <div class="image-placeholder">
+                            <mat-icon>movie</mat-icon>
+                          </div>
+                        </div>
+                        <div class="movie-content">
+                          <h5 class="movie-title">{{ movie.title }}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </div>
+        </mat-tab>
+        
+        <!-- Web Series Tab -->
+        <mat-tab label="Web Series">
+          <div class="tab-content" data-aos="fade-up">
+            <div class="entertainment-subcategories">
+              <mat-tab-group mat-align-tabs="start" animationDuration="300ms">
+                <mat-tab label="Indian Web Series">
+                  <div class="row mt-4">
+                    <div class="col-md-4 mb-4" *ngFor="let series of entertainment.webSeries.categories.indian.items; let i = index"
+                         [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="100 + (i * 50)">
+                      <div class="movie-card">
+                        <div class="movie-image">
+                          <div class="image-placeholder">
+                            <mat-icon>tv</mat-icon>
+                          </div>
+                        </div>
+                        <div class="movie-content">
+                          <h5 class="movie-title">{{ series.title }}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+                
+                <mat-tab label="Foreign Web Series">
+                  <div class="row mt-4">
+                    <div class="col-md-4 mb-4" *ngFor="let series of entertainment.webSeries.categories.foreign.items; let i = index"
+                         [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="100 + (i * 50)">
+                      <div class="movie-card">
+                        <div class="movie-image">
+                          <div class="image-placeholder">
+                            <mat-icon>tv</mat-icon>
+                          </div>
+                        </div>
+                        <div class="movie-content">
+                          <h5 class="movie-title">{{ series.title }}</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-container" data-aos="fade-up">
+      <h2 class="cta-title">Let's Connect!</h2>
+      <p class="cta-text">
+        If you share similar interests or want to discuss anything from music to movies to code, I'd love to connect.
+      </p>
+      <div class="cta-buttons">
+        <a routerLink="/" class="btn btn-light me-3">
+          <span>Back to Home</span>
+        </a>
+        <a href="mailto:yogendra@example.com" class="btn btn-outline-light">
+          <span>Contact Me</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

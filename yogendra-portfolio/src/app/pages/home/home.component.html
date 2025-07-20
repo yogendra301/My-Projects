@@ -1,0 +1,185 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-md-7">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="greeting">Hello, I'm</span>
+            <span class="name">Yogendra</span>
+          </h1>
+          <div class="hero-subtitle">
+            <span class="typed-text"></span>
+          </div>
+          <p class="hero-description">
+            Welcome to my digital portfolio where creativity meets technology. 
+            Explore my journey, projects, and passions.
+          </p>
+          <div class="hero-buttons">
+            <a routerLink="/professional" class="btn btn-gradient me-3">
+              <span class="vmw">View My Work</span>
+            </a>
+            <a href="#about" class="btn btn-outline">
+              <span>Discover My Story</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 d-none d-md-block">
+        <div class="avatar-container">
+          <div class="avatar-placeholder">
+            <!-- <img src="/src/assets/images/Main.jpeg" alt="" srcset=""> -->
+            <!-- <mat-icon>person</mat-icon> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+    <div class="arrow">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about-section">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="about-image">
+          <div class="image-container">
+            <div class="avatar-placeholder large">
+              
+            </div>
+          </div>
+          <div class="experience-badge">
+            <span class="number">7+</span>
+            <span class="text">Years Experience</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="about-content">
+          <h3 class="gradient-text">Who Am I?</h3>
+          <p class="about-text">
+            I'm a passionate Angular Developer with expertise in building modern web applications. 
+            My journey started with PHP, evolved through HTML, CSS, and JavaScript, and now I specialize 
+            in creating engaging user experiences with Angular.
+          </p>
+          <p class="about-text">
+            Beyond coding, I'm a music enthusiast and movie lover. I believe in continuous learning 
+            and applying creative solutions to technical challenges.
+          </p>
+          <div class="about-info">
+            <div class="info-item">
+              <span class="info-label">Name:</span>
+              <span class="info-value">Yogendra</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Role:</span>
+              <span class="info-value">Angular Developer</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Location:</span>
+              <span class="info-value">Bengaluru, India</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Email:</span>
+              <span class="info-value">yogendra@example.com</span>
+            </div>
+          </div>
+          <div class="about-buttons">
+            <a routerLink="/personal" class="btn btn-gradient me-3">
+              <span>Personal Journey</span>
+            </a>
+            <a routerLink="/professional" class="btn btn-outline">
+              <span>Professional Path</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="section projects-section bg-light">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-4" *ngFor="let project of featuredProjects; let i = index">
+        <div class="project-card">
+          <div class="project-image">
+            <div class="image-placeholder">
+              <mat-icon>code</mat-icon>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link">
+                <mat-icon>launch</mat-icon>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h4 class="project-title">{{ project.name }}</h4>
+            <p class="project-description">{{ project.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a routerLink="/professional" class="btn btn-gradient">
+        <span>View All Projects</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="section skills-section">
+  <div class="container">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-container">
+      <div class="row">
+        <div class="col-6 col-md-4 col-lg-3 mb-4" *ngFor="let skill of skills; let i = index">
+          <div class="skill-item">
+            <div class="skill-icon">
+              <mat-icon>{{ skill.icon }}</mat-icon>
+            </div>
+            <h5 class="skill-name">{{ skill.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-container">
+      <h2 class="cta-title">Interested in My Journey?</h2>
+      <p class="cta-text">
+        Explore my personal and professional journey, projects, and interests.
+      </p>
+      <div class="cta-buttons">
+        <a routerLink="/personal" class="btn btn-light me-3">
+          <span>Personal Life</span>
+        </a>
+        <a routerLink="/professional" class="btn btn-outline-light me-3">
+          <span>Professional Path</span>
+        </a>
+        <a routerLink="/hobbies" class="btn btn-outline-light">
+          <span>My Hobbies</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,353 @@
+/* Hero Section */
+.hero-section {
+  height: 40vh;
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.hobbies-hero {
+  background: linear-gradient(135deg, #ff4081, #ff9b44);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Music Section */
+.music-section {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.music-categories {
+  ::ng-deep {
+    .mat-tab-header {
+      border-bottom: none;
+      margin-bottom: 30px;
+    }
+    
+    .mat-tab-label {
+      min-width: 120px;
+      padding: 0 24px;
+      height: 48px;
+      opacity: 1;
+      color: #666;
+      font-weight: 500;
+      
+      &.mat-tab-label-active {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+    
+    .mat-ink-bar {
+      background-color: var(--primary-color);
+      height: 3px;
+      border-radius: 3px;
+    }
+  }
+}
+
+.tab-content {
+  padding: 20px 0;
+}
+
+.music-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    
+    .music-image {
+      .image-placeholder {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        
+        mat-icon {
+          color: white;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.music-image {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f3f3f3, #e6e6e6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    
+    mat-icon {
+      font-size: 80px;
+      color: #aaa;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.music-content {
+  padding: 20px;
+  
+  .music-genre {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color);
+  }
+  
+  .artists-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    .artist-chip {
+      padding: 5px 15px;
+      border-radius: 20px;
+      background: rgba(106, 17, 203, 0.1);
+      color: var(--primary-color);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+/* Entertainment Section */
+.entertainment-section {
+  padding: 100px 0;
+  background-color: #f9f9f9;
+}
+
+.entertainment-categories {
+  ::ng-deep {
+    .mat-tab-header {
+      border-bottom: none;
+      margin-bottom: 30px;
+    }
+    
+    .mat-tab-label {
+      min-width: 120px;
+      padding: 0 24px;
+      height: 48px;
+      opacity: 1;
+      color: #666;
+      font-weight: 500;
+      
+      &.mat-tab-label-active {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+    
+    .mat-ink-bar {
+      background-color: var(--primary-color);
+      height: 3px;
+      border-radius: 3px;
+    }
+  }
+}
+
+.entertainment-subcategories {
+  padding: 20px 0;
+  
+  .subcategory-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 20px 0;
+    color: var(--text-color);
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      border-radius: 3px;
+    }
+  }
+  
+  ::ng-deep {
+    .mat-tab-header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    
+    .mat-tab-label {
+      min-width: 100px;
+      padding: 0 20px;
+      height: 40px;
+      opacity: 1;
+      color: #666;
+      font-weight: 500;
+      
+      &.mat-tab-label-active {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.movie-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    
+    .movie-image {
+      .image-placeholder {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        
+        mat-icon {
+          color: white;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.movie-image {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f3f3f3, #e6e6e6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    
+    mat-icon {
+      font-size: 60px;
+      color: #aaa;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.movie-content {
+  padding: 15px;
+  text-align: center;
+  
+  .movie-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: var(--text-color);
+  }
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+}
+
+.cta-container {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
