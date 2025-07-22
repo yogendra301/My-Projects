@@ -1,0 +1,11 @@
+<mat-card class="card-main" [ngStyle]="{'backgroundColor':taskData.backgroundColor}">
+    <mat-card-title>
+        {{taskData.title}}
+    </mat-card-title>
+    <mat-card-content>
+    {{taskData.desc}}
+    <div class="totalCount">
+        {{taskData.count}}
+    </div>
+    </mat-card-content>
+</mat-card>

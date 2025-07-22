@@ -1,0 +1,39 @@
+.admin-header
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #447ff7;
+    color: white;
+    .header-title{
+    font-size: 2rem;
+    }
+     .navbar{
+        ul{
+            display: flex;
+            list-style-type: none;
+            gap: 5px;
+           li {
+                a{
+                    font-size: large;
+                    text-decoration: none;
+                    color: white;
+                    padding: 0.5rem;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: 0.5s ease-in-out;
+                    &:hover{
+                        color: #447ff7;
+                        background-color: #f4f4f4;
+                }
+                }
+            }
+        }
+    }
+}
+@media(max-width:768px){
+   .admin-header{
+    flex-direction: column;
+   } 
+}

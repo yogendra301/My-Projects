@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './core/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'task-hive';
+
+  constructor(private authServ:AuthService)
+  {
+
+  }
+ngOnInit(): void {
+    this.authServ.setAuthFromStorage();  // Custom method if you need Subject update etc.
+}
 }
