@@ -1,5 +1,16 @@
 .task-list{
 
+    .filter{
+        display: flex;
+
+        input{
+            width: 70%;
+        }
+        button{
+            width: 30%;
+        }
+    }
+
     .task-list-item{
         background-color: white;
         border-radius: 10px;
@@ -11,8 +22,6 @@
             background-color: #f4f4f4;
         }
     }
-
-
     .task-title{
         font-weight: bold;
         font-size: 1rem;

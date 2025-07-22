@@ -20,12 +20,16 @@ constructor(
   }
 
   
-  ngOnInit()
-  {
-    
-    this.route.paramMap.subscribe((paramMap:any)=>{
-    console.log(paramMap.get('id'));
-      this.selectedUserId=paramMap.get('id');
-    })
-  }
+ngOnInit(): void {
+
+  console.log('🚀 Activated route snapshot:', this.route.snapshot);
+  console.log('🚀 Params from snapshot:', this.route.snapshot.params);
+
+this.route.paramMap.subscribe(params => {
+  const id = params.get('id');
+  this.selectedUserId = id;
+});
+
+}
+
 }

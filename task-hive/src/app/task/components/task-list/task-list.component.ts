@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/core/services/api.service';
 export class TaskListComponent implements OnInit {
 
   taskList:any=[]
+  searchTask:string='';
   constructor(private api:ApiService,private router:Router,private route:ActivatedRoute)
   {
 
@@ -23,6 +24,18 @@ export class TaskListComponent implements OnInit {
           this.taskList=res;
         }
       })
+  }
+
+  searchTaskFn()
+  {
+    this.api.getTaskList().subscribe((res:any)=>{
+      if(res)
+      {
+        let filteredTask = res.filter((res:any)=>res.title.includes(this.searchTask)) 
+        this.taskList= filteredTask;
+        debugger;
+      }
+    })
   }
 
   selectTask(task:any)
