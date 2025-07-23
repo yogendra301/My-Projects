@@ -10,13 +10,7 @@ export class MockBackendService implements InMemoryDbService {
       tasks: [
         { id: 1, projectId: 1,assignTo:2 ,title: 'Setup the project', description: 'Setup the project', status: 'pending' },
         { id: 2, projectId: 1,assignTo:2 ,title: 'do login form', description: 'implement the login functionality', status: 'pending' },
-        { id: 1, projectId: 1,assignTo:2 ,title: 'Setup the project', description: 'Setup the project', status: 'pending' },
-        { id: 2, projectId: 1,assignTo:2 ,title: 'do login form', description: 'implement the login functionality', status: 'pending' },{ id: 1, projectId: 1,assignTo:2 ,title: 'Setup the project', description: 'Setup the project', status: 'pending' },
-        { id: 2, projectId: 1,assignTo:2 ,title: 'do login form', description: 'implement the login functionality', status: 'pending' },{ id: 1, projectId: 1,assignTo:2 ,title: 'Setup the project', description: 'Setup the project', status: 'pending' },
-        { id: 2, projectId: 1,assignTo:2 ,title: 'do login form', description: 'implement the login functionality', status: 'pending' },{ id: 1, projectId: 1,assignTo:2 ,title: 'Setup the project', description: 'Setup the project', status: 'pending' },
-        { id: 2, projectId: 1,assignTo:2 ,title: 'do login form', description: 'implement the login functionality', status: 'pending' },{ id: 1, projectId: 1,assignTo:2 ,title: 'Setup the project', description: 'Setup the project', status: 'pending' },
-        { id: 2, projectId: 1,assignTo:2 ,title: 'do login form', description: 'implement the login functionality', status: 'pending' },{ id: 1, projectId: 1,assignTo:2 ,title: 'Setup the project', description: 'Setup the project', status: 'pending' },
-        { id: 2, projectId: 1,assignTo:2 ,title: 'do login form', description: 'implement the login functionality', status: 'pending' }
+        { id: 1, projectId: 1,assignTo:2 ,title: 'Setup the project', description: 'Setup the project', status: 'pending' }
       ],
       projects: [
         { id: 1, title: 'Initial Project', description: 'This is a sample project' },
