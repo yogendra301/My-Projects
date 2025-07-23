@@ -6,19 +6,32 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  private apiUrl='/api'
+  private apiUrl='/api';
   constructor(private http:HttpClient) { }
 
-getTaskList()
-{
+  getTaskList(page=1,pageSize=10)
+  {
+    return this.http.get(`${this.apiUrl}/tasks`);
+  }
 
-  return this.http.get(`${this.apiUrl}/tasks`);
-}
-
-getUserList()
-{
-return this.http.get(`${this.apiUrl}/users`);
-}
+  getUserList()
+  {
+    return this.http.get(`${this.apiUrl}/users`);
+  }
 
 
+  getProjectList()
+  {
+    return this.http.get(`${this.apiUrl}/projects`);
+  }
+
+  addTask(value:any)
+  {
+    return this.http.post(`${this.apiUrl}/tasks`,value);
+  }
+
+  updateTask(value:any)
+  {
+    return this.http.put(`${this.apiUrl}/tasks/${value.id}`, value);
+  }
 }

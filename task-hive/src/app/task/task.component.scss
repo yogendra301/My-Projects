@@ -1,16 +1,22 @@
 .task-main-container{
     height: 100vh;
     display: flex;
-    align-items: center;
+    overflow: hidden;
+    // align-items: center;
 
     .task-list-container{
         height: 100%;
         background-color: lightgrey;
         width: 40%;
         padding: 10px;   
+        box-sizing: border-box;
     }
     .task-overview-container{
         text-align: center;
+        width: 60%;
         padding: 10px;   
+        box-sizing: border-box;
+        height: 100%;
+        overflow: auto;
     }
 }

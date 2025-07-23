@@ -1,1 +1,10 @@
-{{selectedUserId}}
+<div class="top-bar">
+    <div class=" h3 task-title" *ngIf="taskServ.$currentTask|async as task">
+        {{task?.title}}
+    </div>
+    <div class="action-btns">
+        <button mat-raised-button color="accent" (click)="openEditTaskPopup()" >Edit</button>
+        <button mat-raised-button color="warn" >Delete</button>
+    </div>
+</div>
+<!-- {{taskServ.$currentTask|async|json}} -->
