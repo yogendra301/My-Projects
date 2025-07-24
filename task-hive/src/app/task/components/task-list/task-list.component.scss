@@ -4,17 +4,30 @@
     flex-direction: column;
     overflow-y: auto; /* Allow scrolling within the task list */
     max-height: 100%; /* Ensure it doesn't exceed container height */
-    .addbtn{
-        width: 100%;
-        min-height:50px ;
+
+    .addtaskBtn{
+        display: flex;
+        min-height:50px !important;
         margin-bottom: 0.5rem;
+    }
+    .srchicon{
+        width: 20%;
+        height: 100%;
+        border-radius: 5px;
+
+        mat-icon{
+            font-size: large;
+        }
+        
+    }
+    .addbtn{
+        width: 80%;
         font-weight: bold;
         color: rgb(33, 28, 28);
     }
 
     .filter{
         display: flex;
-
         input{
             width: 70%;
         }

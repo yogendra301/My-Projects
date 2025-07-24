@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './core/services/auth.service';
 
 @Component({
@@ -6,13 +6,12 @@ import { AuthService } from './core/services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor(private authServ:AuthService)
-  {
+  constructor(private authService: AuthService) {}
 
+  ngOnInit(): void {
+    // Initialize auth state from localStorage on app startup
+    this.authService.setAuthFromStorage();
   }
-ngOnInit(): void {
-    this.authServ.setAuthFromStorage();  // Custom method if you need Subject update etc.
-}
 }

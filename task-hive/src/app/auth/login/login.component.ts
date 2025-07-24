@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit()
   {
-     const chkUsr = JSON.parse(localStorage.getItem('taskUsr')||'')
+     const chkUsr = JSON.parse(localStorage.getItem('taskUsr')||'null')
      if(chkUsr!=null)
      {
        if(chkUsr.role=='admin')
@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
         if(result && result.length>0)
         {
           localStorage.setItem('taskUsr',JSON.stringify(result[0]));
+          this.authServ.loggedInUsrInfo.next(result[0]);
           if(result[0].role=='admin')
           {
             this.router.navigate(['/admin']);

@@ -1,22 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/core/services/api.service';
 import { TaskService } from '../../services/task.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddeditTaskComponent } from '../addedit-task/addedit-task.component';
+import { slideInOut } from 'src/app/shared/animation';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.scss']
+  styleUrls: ['./task-list.component.scss'],
+  animations:[slideInOut]
 })
-export class TaskListComponent implements OnInit {
+export class TaskListComponent implements OnInit,OnDestroy {
 
   searchTask:string='';
   page = 1;
   pageSize = 10;
   isLoading = false;
   allLoaded = false;
+  isFilterVisible:boolean=false;
+  $destroy = new Subject<void>();
+  animationState='out';
 
   constructor(private api:ApiService,
     private router:Router,
@@ -33,7 +39,9 @@ export class TaskListComponent implements OnInit {
   {
     //  this.loadMoreTasks();
 
-      this.api.getTaskList().subscribe((res:any)=>{
+      this.api.getTaskList().pipe(
+        takeUntil(this.$destroy)
+      ).subscribe((res:any)=>{
         if(res && res.length>0)
         {
           this.taskServ.$taskList.next(res);
@@ -82,4 +90,20 @@ export class TaskListComponent implements OnInit {
       disableClose:true
     })
   }
+
+toggleShowHideFilter() {
+  if (this.animationState === 'in') {
+    this.animationState = 'out';
+  } else {
+    this.isFilterVisible = true;
+    this.animationState = 'in';
+  }
+}
+
+ngOnDestroy()
+{
+  this.$destroy.next();
+  this.$destroy.complete();
+}
+
 }

@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
 
   private apiUrl='/api/users';
-  private loggedInUsrInfo = new BehaviorSubject<any>(null);
+  public loggedInUsrInfo = new BehaviorSubject<any>(null);
   $currentUser = this.loggedInUsrInfo.asObservable();
   constructor(private http:HttpClient,private router:Router) { }
 
@@ -23,19 +23,36 @@ export class AuthService {
     return this.http.post(this.apiUrl,userData);
   }
 
-  getUserRole()
-  {
-    const user = JSON.parse(localStorage.getItem('taskUsr')||'');
-    return user?user.role:'';
+  getUserRole(): string {
+    try {
+      const user = JSON.parse(localStorage.getItem('taskUsr') || 'null');
+      return user && user.role ? user.role : '';
+    } catch (error) {
+      console.error('Error parsing user data from localStorage:', error);
+      return '';
+    }
   }
 
-  setAuthFromStorage()
-  {
-     const user = JSON.parse(localStorage.getItem('taskUsr')||'');
-     if(user)
-     {
-       this.loggedInUsrInfo.next(user);
-     }
+  setAuthFromStorage(): void {
+    try {
+      const user = JSON.parse(localStorage.getItem('taskUsr') || 'null');
+      if (user) {
+        this.loggedInUsrInfo.next(user);
+      }
+    } catch (error) {
+      console.error('Error parsing user data from localStorage:', error);
+      this.loggedInUsrInfo.next(null);
+    }
+  }
+
+  isAuthenticated(): boolean {
+    try {
+      const user = JSON.parse(localStorage.getItem('taskUsr') || 'null');
+      return !!user;
+    } catch (error) {
+      console.error('Error parsing user data from localStorage:', error);
+      return false;
+    }
   }
 
   logout()

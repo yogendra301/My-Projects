@@ -4,8 +4,9 @@
 >
     <div class="addtaskBtn">
         <button class="btn btn-info addbtn" (click)="openAddTaskPopup()"> + Add Task</button>
+        <button mat-raised-button class="srchicon" (click)="toggleShowHideFilter()"><mat-icon>search</mat-icon></button>
     </div>
-    <div class="filter">
+    <div class="filter" [@slideInOut]="animationState"  >
         <input type="text" class="form-control" name="searchTask" [(ngModel)]="searchTask"><button class="btn btn-primary" (click)="searchTaskFn()">search</button>
     </div>
     <div class="task-list-item" *ngFor="let task of taskServ.$myTaskList|async" (click)="selectTask(task)" >

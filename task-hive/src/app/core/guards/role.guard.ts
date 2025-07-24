@@ -8,30 +8,37 @@ import { AuthService } from '../services/auth.service';
 })
 export class RoleGuard implements CanActivate, CanActivateChild {
 
-  constructor(private authServ:AuthService,private router:Router)
-  {
+  constructor(private authService: AuthService, private router: Router) {}
 
-  }
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-    const currentUser = route.data['role'];
-     const getRole= this.authServ.getUserRole();
-
-     if(currentUser!=getRole)
-     {
-      this.router.navigate(['/unauthorized']);
-       return false;
-     }
-    return true;
+    state: RouterStateSnapshot
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    return this.checkRole(route);
   }
+
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-    
-     return true;
+    state: RouterStateSnapshot
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    return this.checkRole(childRoute);
   }
-  
+
+  private checkRole(route: ActivatedRouteSnapshot): boolean | UrlTree {
+    const requiredRole = route.data['role'];
+    const userRole = this.authService.getUserRole();
+
+    // Check if user has the required role
+    if (requiredRole && userRole && requiredRole === userRole) {
+      return true;
+    }
+
+    // If no required role is specified, allow access (role check not needed)
+    if (!requiredRole) {
+      return true;
+    }
+
+    // User doesn't have the required role, redirect to unauthorized page
+    return this.router.createUrlTree(['/unauthorized']);
+  }
 }

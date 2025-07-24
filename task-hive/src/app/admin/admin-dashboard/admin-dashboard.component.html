@@ -1,6 +1,6 @@
 <mat-grid-list [cols]="getColumns()" rowHeight="320px">
     <mat-grid-tile *ngFor="let dash of dashboardCards">
-        <app-dashboard-card [taskData]="dash"></app-dashboard-card>
+        <app-dashboard-card [taskData]="dash" hoverAnimation></app-dashboard-card>
     </mat-grid-tile>
 </mat-grid-list>
 
