@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "role": "admin",
+      "token": "faketoken-123"
+    },
+    {
+      "id": 2,
+      "username": "dev",
+      "password": "dev",
+      "role": "developer",
+      "token": "faketoken-456"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "assignTo": 2,
+      "title": "Setup the project",
+      "description": "Setup the project",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "projectId": 1,
+      "assignTo": 2,
+      "title": "do login form",
+      "description": "implement the login functionality",
+      "status": "pending"
+    },
+    {
+      "id": 3,
+      "projectId": 1,
+      "assignTo": 2,
+      "title": "Setup the project",
+      "description": "Setup the project",
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "title": "design dashboard",
+      "description": "design full dashboard page",
+      "projectId": "1",
+      "assignTo": "1",
+      "status": "1"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Initial Project",
+      "description": "This is a sample project"
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "title": "Not Started",
+      "color": "#FF0000"
+    },
+    {
+      "id": 2,
+      "title": "In Progress",
+      "color": "#FFFF00"
+    },
+    {
+      "id": 3,
+      "title": "Pending",
+      "color": "#00FF00"
+    },
+    {
+      "id": 4,
+      "title": "Completed",
+      "color": "#0000FF"
+    }
+  ]
+}

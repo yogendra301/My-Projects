@@ -67,13 +67,16 @@ export class TaskListComponent implements OnInit,OnDestroy {
 
   searchTaskFn()
   {
-    this.api.getTaskList().subscribe((res:any)=>{
+    this.api.getTaskList().pipe(takeUntil(this.$destroy)).subscribe((res:any)=>{
       if(res)
       {
         let filteredTask = res.filter((res:any)=>res.title.includes(this.searchTask)) 
        this.taskServ.$taskList.next(filteredTask);
       }
-    })
+    }),(error:any)=>{
+      console.error('failed to load tasks',error);
+    };
+    
   }
 
   selectTask(task:any)

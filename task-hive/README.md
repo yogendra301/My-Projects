@@ -1,27 +1,73 @@
-# TaskHive
+*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               # Task Hive
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.0.
+A task management application built with Angular and JSON Server.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js (v14 or higher)
+- npm
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Install dependencies:
+```bash
+npm install
+```
 
-## Build
+## Running the Application
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Option 1: Run both servers simultaneously (Recommended)
+```bash
+npm run start:dev
+```
+This command will start both the JSON server (on port 3000) and the Angular development server (on port 4200) concurrently.
 
-## Running unit tests
+### Option 2: Run servers separately
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Start the JSON Server (in one terminal):
+```bash
+npm run start:server
+```
+This will start the JSON server on `http://localhost:3000`
 
-## Running end-to-end tests
+2. Start the Angular development server (in another terminal):
+```bash
+npm start
+```
+This will start the Angular app on `http://localhost:4200`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## API Endpoints
 
-## Further help
+The JSON server provides the following endpoints:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- `GET /users` - Get all users
+- `GET /users?username={username}&password={password}` - Login
+- `POST /users` - Register new user
+- `GET /tasks` - Get all tasks
+- `POST /tasks` - Create new task
+- `PUT /tasks/{id}` - Update task
+- `DELETE /tasks/{id}` - Delete task
+- `GET /projects` - Get all projects
+- `GET /status` - Get all status options
+- `POST /status` - Create new status
+
+## Default Users
+
+- **Admin**: username: `admin`, password: `admin`
+- **Developer**: username: `dev`, password: `dev`
+
+## Features
+
+- User authentication and authorization
+- Task management (CRUD operations)
+- Project management
+- Status management
+- Role-based access control
+
+## Development
+
+The application uses Angular proxy configuration to route API calls from `/api/*` to the JSON server running on port 3000. This eliminates CORS issues during development.
+
+## Data Storage
+
+All data is stored in `db.json` file. The JSON server automatically handles ID generation and data persistence.

@@ -13,9 +13,9 @@ export class AuthService {
   $currentUser = this.loggedInUsrInfo.asObservable();
   constructor(private http:HttpClient,private router:Router) { }
 
-  login(email:string,password:string):Observable<any>
+  login(username:string,password:string):Observable<any>
   {
-    return this.http.get(`${this.apiUrl}?email=${email}&password=${password}`);
+    return this.http.get(`${this.apiUrl}?username=${username}&password=${password}`);
   }
 
   register(userData:any):Observable<any>

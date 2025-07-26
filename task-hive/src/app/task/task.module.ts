@@ -6,6 +6,7 @@ import { TaskOverviewComponent } from './components/task-overview/task-overview.
 import { TaskRoutingModule } from './task-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { AddeditTaskComponent } from './components/addedit-task/addedit-task.component';
+import { AddStatusComponent } from './components/add-status/add-status.component';
 // import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AddeditTaskComponent } from './components/addedit-task/addedit-task.com
     TaskComponent,
     TaskListComponent,
     TaskOverviewComponent,
-    AddeditTaskComponent
+    AddeditTaskComponent,
+    AddStatusComponent
   ],
   imports: [
     CommonModule,

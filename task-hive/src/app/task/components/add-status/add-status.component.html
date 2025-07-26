@@ -1,0 +1,18 @@
+<h2 mat-dialog-title> Add Task</h2>
+<mat-dialog-content>
+    <form #statusForm="ngForm" (ngSubmit)="addStatus(statusForm)">
+    <mat-form-field>
+        <mat-label>Status Name</mat-label>
+        <input type="text" matInput [(ngModel)]="statusFormObj.title" #title="ngModel" name="title" required>
+        <mat-error *ngIf="title.touched && title.errors?.['required']" >Status name is required</mat-error>
+    </mat-form-field>
+        <div class="colorpicker">
+        <label>Choose Color</label>
+        <input type="color" [(ngModel)]="statusFormObj.color" #color="ngModel" name="color" required>
+        <mat-error *ngIf="color.touched &&  color.invalid">You must choose a color</mat-error>
+    </div>
+<mat-dialog-actions align="end"> 
+    <button mat-raised-button color="primary" type="submit">Save</button>
+</mat-dialog-actions>
+    </form>
+</mat-dialog-content>

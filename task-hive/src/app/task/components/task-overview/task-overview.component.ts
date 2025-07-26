@@ -5,7 +5,7 @@ import { TaskService } from '../../services/task.service';
 import { ApiService } from 'src/app/core/services/api.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddeditTaskComponent } from '../addedit-task/addedit-task.component';
-
+import *  as moment from 'moment' 
 @Component({
   selector: 'app-task-overview',
   templateUrl: './task-overview.component.html',
@@ -21,13 +21,10 @@ constructor(
     public taskServ:TaskService,
     private api:ApiService,
     private dialog:MatDialog
-    // private dialogRef:MatDialogRef<AddeditTaskComponent>
-
   )
   {
-
+                              
   }
-
   
 ngOnInit(): void {
 this.route.paramMap.subscribe(params => {

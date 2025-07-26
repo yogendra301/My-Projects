@@ -7,14 +7,16 @@ import { NotAuthorisedComponent } from './components/not-authorised/not-authoris
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
-
+import { AutofocusDirective } from '../core/directives/autofocus.directive';
+import *  as moment from 'moment' 
 
 @NgModule({
   declarations: [
     NotAuthorisedComponent,
     PagenotfoundComponent,
     DashboardCardComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    AutofocusDirective
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
     NotAuthorisedComponent,
     PagenotfoundComponent,
     DashboardCardComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    AutofocusDirective
   ]
 })
 export class SharedModule { }

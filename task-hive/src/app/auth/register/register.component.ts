@@ -47,7 +47,10 @@ matchPassword(group: FormGroup): ValidationErrors | null {
   register()
   {
     this.registerForm.markAllAsTouched();
-
+    if (!this.registerForm.valid) {
+      this.toastr.error('Please fill all required fields correctly');
+      return;
+    }
       this.authServ.register(this.registerForm.value).subscribe((result:any)=>{
         if(result)
         {
